@@ -21,7 +21,12 @@ helm install sealed-secrets -n kube-system --set-string fullnameOverride=sealed-
 
 Install SealedSecrets CLI tool.
 
+[source, bash]
+----
+kubeseal --format yaml < postgres-secret.yml > postgres-sealed-secret.yml
 
+kubectl apply -f postgres-sealed-secret.yml
+----
 
 == External Secrets
 
